@@ -22,9 +22,14 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", inline: <<-SHELL
     systemctl disable apt-daily.service
     systemctl disable apt-daily.timer
-
+    sudo apt-get install software-properties-common
+    sudo apt-add-repository universe
     sudo apt-get update
-    sudo apt-get install -y python3-venv zip 
+    sudo apt-get install python3
+    sudo apt-get install python-virtualenv
+    sudo apt-get install python3-pip
+    sudo apt-get install -y python3.8-venv
+
     touch /home/vagrant/.bash_aliases
     if ! grep -q PYTHON_ALIAS_ADDED /home/vagrant/.bash_aliases; then
       echo "# PYTHON_ALIAS_ADDED" >> /home/vagrant/.bash_aliases
