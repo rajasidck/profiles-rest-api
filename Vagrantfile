@@ -34,8 +34,7 @@ Vagrant.configure("2") do |config|
     sudo apt-get install python-setuptools
     sudo apt-get install python-virtualenv
     sudo apt-get install python3-pip
-    sudo apt-get install python-django
-    sudo apt-get install python-djangorestframework
+
     sudo apt-get install -y python3-venv
 
     touch /home/vagrant/.bash_aliases
