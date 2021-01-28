@@ -12,8 +12,12 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
-  config.vm.box = "ubuntu/trusty64"
-  config.vm.box_version = "~> 20150420.1.2"
+  # config.vm.box = "ubuntu/bionic64"
+  # config.vm.box_version = "20201006.0.0"
+  config.vm.box = "ubuntu/xenial64"
+  config.vm.box_version = "~> 20191204.0.0"
+  # config.vm.box = "ubuntu/trusty64"
+  # config.vm.box_version = "~> 20150420.1.2"
 
   # config.vm.box_version = "~> 20200304.0.0"
 
@@ -26,9 +30,13 @@ Vagrant.configure("2") do |config|
     sudo apt-add-repository universe
     sudo apt-get update
     sudo apt-get install python3
+    sudo apt-get install python3-dev python3-pip libxml2-dev libxslt1-dev zlib1g-dev libffi-dev libssl-dev
+    sudo apt-get install python-setuptools
     sudo apt-get install python-virtualenv
     sudo apt-get install python3-pip
-    sudo apt-get install -y python3.8-venv
+    sudo apt-get install python-django
+    sudo apt-get install python-djangorestframework
+    sudo apt-get install -y python3-venv
 
     touch /home/vagrant/.bash_aliases
     if ! grep -q PYTHON_ALIAS_ADDED /home/vagrant/.bash_aliases; then
